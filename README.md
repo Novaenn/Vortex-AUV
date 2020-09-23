@@ -33,21 +33,21 @@ Robot operating system (ROS) provides services designed for heterogeneous comput
 
 1. Setup your computer to accept software from packages.ros.org:
 	```bash
-	$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+	sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 	```
 
 2. Set up your keys:
 	```bash
-	$ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+	sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 	```
 
 3. Update:
 	```bash
-	$ sudo apt-get update
+	$ sudo apt update
   
 4. Installation:
 	```bash
-	$ sudo apt-get install ros-kinetic-desktop-full
+	sudo apt install ros-melodic-desktop-full
 	```
 
 5. Before you can use ROS, you will need to initialize rosdep: 
@@ -58,7 +58,7 @@ Robot operating system (ROS) provides services designed for heterogeneous comput
 
 6. Environment setup:
 	```bash
-	$ echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+	$ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 	$ source ~/.bashrc
 
 ## 2. Install the necessary dependencies to interface with drivers, Gazebo etc. ##
@@ -77,20 +77,20 @@ or install manually the remaining dependencies
 
 2. Install rosbridge-server to interface with sensor and actuator drivers on the physical Manta.
 	```bash
-	$ sudo apt-get install ros-kinetic-rosbridge-server
+	$ sudo apt-get install ros-melodic-rosbridge-server
   
 3. Install tf. tf is a package that lets the user keep track of multiple coordinate frames over time:
 	```bash
-	$ sudo apt-get install ros-kinetic-message-to-tf
+	$ sudo apt-get install ros-melodic-message-to-tf
 
 4. Install tf. tf is a package that lets the user keep track of multiple coordinate frames over time:
 	```bash
-	$ sudo apt-get install ros-kinetic-geographic-msgs
+	$ sudo apt-get install ros-melodic-geographic-msgs
 
 5. Install move-base-msgs. This is necessary to perform some actions:
 	```bash
-	$ sudo apt-get install ros-kinetic-move-base
-	$ sudo apt-get install ros-kinetic-move-base-msgs 
+	$ sudo apt-get install ros-melodic-move-base
+	$ sudo apt-get install ros-melodic-move-base-msgs 
 
 ## 3. Now that you have ROS Kinetic installed. Create ROS workspace ##
 ###### This is necessary to be able to run the simulation package that I have created
